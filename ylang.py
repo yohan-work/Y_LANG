@@ -43,7 +43,7 @@ class YohanInterpreter:
     def execute_command(self, command):
         """명령어를 실행합니다."""
         # 요한아 숫자 또는 문자열
-        if command.startswith('요한아 ') and command != '요한아 출력해' and not any(command.startswith(prefix) for prefix in ['요한아 더해', '요한아 빼', '요한아 곱해', '요한아 나눠', '요한아 저장해', '요한아 불러와', '요한아 같니', '요한아 크니', '요한아 작니', '요한아 조건', '요한아 반복해']):
+        if command.startswith('요한아 ') and command != '요한아 출력해' and not any(command.startswith(prefix) for prefix in ['요한아 더해', '요한아 빼', '요한아 곱해', '요한아 나눠', '요한아 저장해', '요한아 불러와', '요한아 같니', '요한아 크니', '요한아 작니', '요한아 조건', '요한아 반복해', '요한아 거꾸로해', '요한아 복사해', '요한아 만약']):
             value = command[4:].strip()
             try:
                 # 숫자인지 확인
@@ -57,7 +57,7 @@ class YohanInterpreter:
         # 요한아 출력해
         elif command == '요한아 출력해':
             value = self.pop()
-            print(value)
+            print(value)  # 값만 출력
         
         # 요한아 더해
         elif command == '요한아 더해':
@@ -174,6 +174,7 @@ class YohanInterpreter:
             raise Exception(f"알 수 없는 명령어: {command}")
 
 def main():
+    print("요한랭 인터프리터 실행 중...")
     if len(sys.argv) < 2:
         print("사용법: python ylang.py 파일명.yl")
         sys.exit(1)
@@ -190,6 +191,7 @@ def main():
     interpreter = YohanInterpreter()
     try:
         interpreter.interpret(code)
+        print("실행 완료!")
     except Exception as e:
         print(f"실행 오류: {e}")
         sys.exit(1)
