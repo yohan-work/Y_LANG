@@ -99,4 +99,7 @@ python ylang.py 파일명.yl
 
 ## 만든이
 
-요한랭 프로젝트 팀
+Yohan Choi.
+
+![image](https://github.com/user-attachments/assets/69e3493a-b4d7-440b-ad2e-e63660fe011a)
+
